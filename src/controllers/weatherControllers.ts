@@ -8,7 +8,7 @@ export const weather = async (req: Request, res: Response): Promise<void> => {
     const { city } = req.query;
 
     if (!city || typeof city !== "string") {
-        logger.error("Invalid city name provided or city name missing in the request");
+        logger.error("Invalid city name provided or city name missing in the request parameter");
       res.status(400).json({ error: "City name is required." });
       
     } else {
