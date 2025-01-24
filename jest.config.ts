@@ -198,5 +198,15 @@ const config: Config = {
 module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
+  transform: {
+    '^.+\\.ts$': 'ts-jest',  // Transform .ts files using ts-jest
+    '^.+\\.js$': 'babel-jest', // Optionally, if you want Babel to handle JS files, you can use babel-jest
+  },
+  moduleFileExtensions: ['js', 'ts', 'json', 'node'],
+  testMatch: [
+    '**/tests/**/*.js',   // Match .js test files
+    '**/tests/**/*.ts',   // Match .ts test files
+    '**/?(*.)+(spec|test).[jt]s?(x)', // Generic test file pattern for both js and ts
+  ],
 };
 export default config;

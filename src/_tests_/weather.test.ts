@@ -8,7 +8,7 @@ jest.mock('../services/weatherService',()=>({
 describe("weather controller",()=>{
     let res:any;
     beforeEach(()=>{
-    (getWeatherByCity as jest.Mock).mockReset();
+    (getWeatherByCity as jest.Mock).mockClear();
     res = {
         status: jest.fn().mockReturnThis(),
         json: jest.fn(),
